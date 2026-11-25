@@ -6,7 +6,6 @@ Central, auto-synced **Schema v3** catalog of LibreHaptics game mods and `.lhfxp
 
 - **Standalone VR (Meta Quest — default in Player Lite):**
   `https://raw.githubusercontent.com/LibreHaptics/LibreHaptics-Catalog/main/standalone-games.json`
-  *(Alias: `quest-games.json`)*
 - **PCVR (Windows / Linux OpenXR & SteamVR):**
   `https://raw.githubusercontent.com/LibreHaptics/LibreHaptics-Catalog/main/pcvr-games.json`
 - **All PC (PCVR + PC Flat):**
