@@ -1,0 +1,30 @@
+name: Validate Catalog PR
+
+on:
+  pull_request:
+    paths:
+      - "sources.json"
+      - "scripts/build_catalog.py"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate sources.json syntax
+        run: python3 -m json.tool sources.json > /dev/null
+
+      - name: Dry-run catalog build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/build_catalog.py --dry-run --strict

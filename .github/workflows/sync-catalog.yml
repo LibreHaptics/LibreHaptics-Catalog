@@ -1,0 +1,47 @@
+name: Sync Catalog
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "sources.json"
+      - "scripts/build_catalog.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-catalog
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout catalog
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build Schema v3 catalogs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/build_catalog.py
+
+      - name: Commit updated catalog files
+        run: |
+          if git diff --quiet catalog.json standalone-games.json quest-games.json pcvr-games.json pc-games.json; then
+            echo "No catalog changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json standalone-games.json quest-games.json pcvr-games.json pc-games.json
+          git commit -m "chore(catalog): sync game releases"
+          git push

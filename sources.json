@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "modRepositories": [
+    {
+      "repo": "LibreHaptics/standalone-Lambda1VR",
+      "branch": "librehaptics",
+      "manifestPath": "librehaptics-mod.json"
+    },
+    {
+      "repo": "LibreHaptics/mod-questcraft",
+      "branch": "main",
+      "manifestPath": "librehaptics-mod.json"
+    },
+    {
+      "repo": "LibreHaptics/pcvr-JKXRL",
+      "branch": "librehaptics",
+      "manifestPath": "librehaptics-mod.json"
+    }
+  ],
+  "packRepositories": [
+    {
+      "repo": "LibreHaptics/LibreHaptics-Packs",
+      "branch": "main",
+      "indexPath": "librehaptics-packs.json"
+    }
+  ],
+  "federatedManifests": []
+}
