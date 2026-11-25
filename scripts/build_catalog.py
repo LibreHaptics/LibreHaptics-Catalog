@@ -327,7 +327,6 @@ def main() -> int:
 
     write_catalog_file(ROOT_DIR / "catalog.json", all_games)
     write_catalog_file(ROOT_DIR / "standalone-games.json", standalone_games)
-    write_catalog_file(ROOT_DIR / "quest-games.json", standalone_games)
     write_catalog_file(ROOT_DIR / "pcvr-games.json", pcvr_games)
     write_catalog_file(ROOT_DIR / "pc-games.json", pc_games)
     print("Catalog files updated.")
