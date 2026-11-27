@@ -3,6 +3,57 @@
   "games": [
     {
       "schemaVersion": 3,
+      "id": "standalone-Doom3Quest",
+      "name": "Doom3Quest (Doom 3 VR)",
+      "version": "1.4.8.2",
+      "author": "LibreHaptics / Team Beef",
+      "description": "Modified idTech 4 VR engine (Doom3Quest) with native LibreHaptics ABI v1.1 support (full Doom 3 & RoE arsenal recoil, 3D directional damage, explosions, Mars oxygen, dynamic heartbeat, PDA, and .lhfx overrides).",
+      "protocols": [
+        "LH Native"
+      ],
+      "categories": [
+        "standalone"
+      ],
+      "targets": {
+        "standalone": {
+          "androidPackageName": "com.drbeef.doom3quest",
+          "launchAfterInstall": true,
+          "detection": {
+            "matchMode": "all",
+            "versionSource": "auto",
+            "rules": [
+              {
+                "type": "apk",
+                "packageName": "com.drbeef.doom3quest"
+              }
+            ]
+          },
+          "install": {
+            "steps": [
+              {
+                "kind": "apk",
+                "fileName": "Doom3Quest-1.4.8.2-arm64.apk",
+                "assetPattern": "Doom3Quest-*-arm64.apk",
+                "downloadUrl": "https://github.com/LibreHaptics/standalone-Doom3Quest/releases/download/v1.4.8.2/Doom3Quest-1.4.8.2-arm64.apk",
+                "sha256": "d95100db1cade7831f95e30cff13d94b7c517cc740d4f2a8451db4cf410b9e52",
+                "requiresUninstallOnSignatureMismatch": true,
+                "version": "1.4.8.2"
+              }
+            ]
+          },
+          "uninstall": {
+            "uninstallApk": true,
+            "removeLocalPack": true,
+            "deleteTrackedFiles": true,
+            "preservePaths": [
+              "/sdcard/Doom3Quest"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "schemaVersion": 3,
       "id": "standalone-Lambda1VR",
       "name": "Lambda1VR (Half-Life VR)",
       "version": "1.7.4.2",
