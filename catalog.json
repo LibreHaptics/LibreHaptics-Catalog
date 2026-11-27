@@ -102,6 +102,57 @@
           }
         }
       }
+    },
+    {
+      "schemaVersion": 3,
+      "id": "standalone-PreyVR",
+      "name": "PreyVR (Prey 2006 VR)",
+      "version": "1.2.4.1",
+      "author": "LibreHaptics / Team Beef",
+      "description": "Modified idTech 4 VR engine (PreyVR Enhanced Edition) with native LibreHaptics ABI v1.1 support (variable-gravity 3D TCS projection for Wall-Walks and ceilings, full Prey arsenal including all 4 Leech Gun modes, Spirit Walk, Deathwalk, Portals, Gravity Flips, Shuttle combat, dynamic heartbeat, and .lhfx overrides).",
+      "protocols": [
+        "LH Native"
+      ],
+      "categories": [
+        "standalone"
+      ],
+      "targets": {
+        "standalone": {
+          "androidPackageName": "com.lvonasek.preyvr",
+          "launchAfterInstall": true,
+          "detection": {
+            "matchMode": "all",
+            "versionSource": "auto",
+            "rules": [
+              {
+                "type": "apk",
+                "packageName": "com.lvonasek.preyvr"
+              }
+            ]
+          },
+          "install": {
+            "steps": [
+              {
+                "kind": "apk",
+                "fileName": "PreyVR-1.2.4.1-arm64.apk",
+                "assetPattern": "PreyVR-*-arm64.apk",
+                "downloadUrl": "https://github.com/LibreHaptics/standalone-PreyVR/releases/download/v1.2.4.1/PreyVR-1.2.4.1-arm64.apk",
+                "sha256": "886fc721e191902e9f3542031098b4ad87eca143d21e4a818475b0d06b5c43b3",
+                "requiresUninstallOnSignatureMismatch": true,
+                "version": "1.2.4.1"
+              }
+            ]
+          },
+          "uninstall": {
+            "uninstallApk": true,
+            "removeLocalPack": true,
+            "deleteTrackedFiles": true,
+            "preservePaths": [
+              "/sdcard/PreyVR"
+            ]
+          }
+        }
+      }
     }
   ]
 }
