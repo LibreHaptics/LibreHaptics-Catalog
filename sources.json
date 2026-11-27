@@ -7,6 +7,11 @@
       "manifestPath": "librehaptics-mod.json"
     },
     {
+      "repo": "LibreHaptics/standalone-Doom3Quest",
+      "branch": "librehaptics",
+      "manifestPath": "librehaptics-mod.json"
+    },
+    {
       "repo": "LibreHaptics/mod-questcraft",
       "branch": "main",
       "manifestPath": "librehaptics-mod.json"
