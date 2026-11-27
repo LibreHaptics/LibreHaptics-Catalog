@@ -10,6 +10,11 @@
       "repo": "LibreHaptics/standalone-Doom3Quest",
       "branch": "librehaptics",
       "manifestPath": "librehaptics-mod.json"
+    },
+    {
+      "repo": "LibreHaptics/standalone-PreyVR",
+      "branch": "librehaptics",
+      "manifestPath": "librehaptics-mod.json"
     }
   ],
   "packRepositories": [
